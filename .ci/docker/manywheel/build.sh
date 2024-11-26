@@ -65,6 +65,13 @@ case ${GPU_ARCH_TYPE} in
         DOCKER_GPU_BUILD_ARG=""
         MANY_LINUX_VERSION="s390x"
         ;;
+    cpu-riscv64)
+        TARGET=final
+        DOCKER_TAG=cpu-riscv64
+        GPU_IMAGE=""
+        DOCKER_GPU_BUILD_ARG=""
+        MANY_LINUX_VERSION="riscv64"
+        ;;
     cuda)
         TARGET=cuda_final
         DOCKER_TAG=cuda${GPU_ARCH_VERSION}

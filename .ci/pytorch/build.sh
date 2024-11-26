@@ -99,6 +99,15 @@ if [[ "$BUILD_ENVIRONMENT" == *aarch64* ]]; then
   export ACL_ROOT_DIR=/ComputeLibrary
 fi
 
+if [[ "$BUILD_ENVIRONMENT" == *riscv64* ]]; then
+  source /opt/pyvenv/bin/activate
+
+  export USE_CUDA=0
+  export USE_MKLDNN=0
+  export USE_DISTRIBUTED=0
+  export QEMU_CPU="rv64"
+fi
+
 if [[ "$BUILD_ENVIRONMENT" == *libtorch* ]]; then
   POSSIBLE_JAVA_HOMES=()
   POSSIBLE_JAVA_HOMES+=(/usr/local)
