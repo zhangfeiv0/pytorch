@@ -53,7 +53,7 @@ static CPUCapability compute_cpu_capability() {
     }
 #endif
 #elif defined(HAVE_RVV_CPU_DEFINITION)
-    if (strcmp(envar, "rvv") == 0) {
+    if (envar == "rvv") {
       return CPUCapability::RVV;
     }
 #else
